@@ -1,10 +1,40 @@
-# recsys-group-project
+# Session-Based GNN Recommendation System
 
-Session-based recommendation system scaffold aligned to an SR-GNN style workflow and packaged for MLOps demonstration.
+A course project for next-item recommendation from anonymous browsing sessions, combining graph neural network models with reproducible ML pipelines, model serving, and monitoring.
 
-## Overview & Model Scope
+## My contribution
 
-The repository is structured for a session-based recommender. The production-facing model wrapper is `SRGNNRecommender`, with a transition-graph baseline behind the same interfaces so the repository stays usable before a full neural SR-GNN implementation is dropped in.
+**Tran Anh Tuan - Team Lead / Solution Architect | Team of 5 | February - May 2026**
+
+- Led solution architecture, task planning, and testing across the recommendation workflow.
+- Coordinated data preparation, GNN training and evaluation, model comparison, and serving interfaces.
+- Planned the integration of experiment tracking, data versioning, CI/CD, and operational monitoring.
+
+This is a portfolio fork of the [team repository](https://github.com/tlong-ds/recsys-group-project).
+Models, pipelines, and deployment assets are a shared team effort.
+
+## What is in the repository
+
+- **Session-based GNNs:** PyTorch implementations of SR-GNN variants, GGNN, and TAGNN for next-item ranking.
+- **Reproducible experiments:** DVC data/training pipelines, version comparisons, and MLflow experiment tracking.
+- **Evaluation and selection:** Hit Rate@K and MRR@K, model-matrix evaluation, selection, retraining, and promotion stages.
+- **Serving:** FastAPI recommendation endpoints and a React/TypeScript interface.
+- **Observability:** Prometheus/Grafana configuration and Evidently monitoring workflows.
+- **Delivery assets:** Docker Compose, GitHub Actions, Kubernetes manifests, and Terraform configuration.
+
+Infrastructure configuration describes supported deployment workflows; its presence does not imply a continuously running public production service.
+
+## Pipeline
+
+```text
+Session data -> validation / preprocessing -> versioned DVC datasets
+  -> GNN model matrix -> ranking evaluation -> model selection / retraining
+  -> model artifact -> FastAPI -> recommendation interface
+
+MLflow: parameters, metrics, artifacts
+Prometheus / Grafana: serving telemetry
+Evidently: monitoring and drift reports
+```
 
 ## Technology Stack
 
