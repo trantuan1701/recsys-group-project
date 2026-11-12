@@ -22,7 +22,7 @@ Models, pipelines, and deployment assets are a shared team effort.
 - **Observability:** Prometheus/Grafana configuration and Evidently monitoring workflows.
 - **Delivery assets:** Docker Compose, GitHub Actions, Kubernetes manifests, and Terraform configuration.
 
-Infrastructure configuration describes supported deployment workflows; its presence does not imply a continuously running public production service.
+Docker Compose supports the local stack; Kubernetes manifests and Terraform configuration describe the cloud deployment workflow.
 
 ## Pipeline
 
